@@ -52,10 +52,15 @@ class _MyHomePageState extends State<MyHomePage> {
                     ? Image.file(file!)
                     : Text("Prenez une photo")),
             Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 ElevatedButton(
                     onPressed: (() => useCamera(ImageSource.gallery)),
-                    child: Text("Prendre une photo"))
+                    child: Icon(Icons.photo_library_outlined)),
+                ElevatedButton(
+                    onPressed: (() => useCamera(ImageSource.camera)),
+                    child: Icon(Icons.camera_alt_outlined))
               ],
             )
           ],
